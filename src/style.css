@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Ghibli Regular';
+    font-style: normal;
+    font-weight: normal;
+    src:local('Ghibli Regular'), url('Eyad Al-Samman - Ghibli.woff') format('Woff');
+}
+
+@font-face {
+    font-family: 'Ghibli Bold';
+    font-style: normal;
+    font-weight: normal;
+    src:local('Ghibli Bold'), url('Eyad Al-Samman - Ghibli-Bold.woff') format('Woff');
+}
+*{
+    font-family: 'Roboto Condensed', 'Helvetica Neue', sans-serif;
+ }
+
+ body{
+    background: linear-gradient(180deg, #A7D8F7 0%, #7CC5F2 19.11%, #51DAC1 100%);
+    mix-blend-mode: normal;
+    background-attachment: fixed;
+    padding: 30px;
+ }
+
+ h1{
+    font-family: 'Ghibli Bold';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    width: 80%;
+    height: 50%;
+    position: center;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 20px;
+ }
+
+ main {
+     display: flex;
+ }
+
+ aside {
+    width: 20%;
+    height: 50%;
+    background: rgba(230, 254, 255, 0.7);
+    border-radius: 30px;
+    padding: 13px;
+    margin: 20px;
+
+ }
+
+ section {
+    padding: 13px;
+    margin: 20px;
+    width: 60%;
+    background: rgba(230, 254, 255, 0.7);
+    border-radius: 30px;   
+ }
+
+
+
