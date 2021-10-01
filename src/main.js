@@ -1,6 +1,22 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
+import { /* nombres de funciones */ example } from './data.js';
+
+import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(example, data);
+const films = data.films;   
+console.log("peliculas", films);
+
+const div = document.getElementById("contenedorpeliculas");
+
+const drawCard = (pelicula) => {
+  return`<div class="card">
+    <ol>
+    <li>Nombre: ${pelicula.title}</li>
+    <li>Año: ${pelicula.release_date}</li>
+    </ol>
+  </div>`;
+};
+  
+for (let i=0; i < 19; i++) {
+  div.innerHTML += drawCard(films[i]);
+} 

@@ -5,24 +5,39 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-   
+  <body> 
+      <div id="root">
+  
       <div id="container">
         <header>
-          <h1> GhibliPediag</h1>
+          <h1> GhibliPedia</h1>
         </header>
         <main>
           <aside>
             <h3> Instrucciones </h3>
             <p> Estas son las instrucciones </p>
 
-            <h4> Filtros </h4>
-            <p> Aqui van los filtros </p>
+
+            <h4>Navegador GhibliPedia</h4>
+            <form>
+              <fieldset>
+                <legend>Filtros</legend>
+                <select name="filtro_provisional" id="filtro_pro">
+                  <option value="nombre_de_peliculas">Nombre de Peliculas</option>
+                  <option value="fecha_de_publicacion">Fecha de Publicación</option>
+                </select>
+
+              </fieldset>
+            </form>
+            
           </aside> 
           <section>
             <h2> Listado Peliculas </h2>
+            <!-- Creamos un contenedor vacío, que se llenará con la data usando javascript -->
+      <div id="contenedorpeliculas" > 
+      
+      </div>
+
           </section>
         
         </main>
@@ -36,7 +51,8 @@
 
       </div>
 
-
+      </div>
+      <script src="main.js" type="module"></script>
 
   </body>
 </html>

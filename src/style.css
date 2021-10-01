@@ -27,7 +27,6 @@
     font-style: normal;
     font-weight: normal;
     font-size: 72px;
-    width: 80%;
     height: 50%;
     position: center;
     background: #ffffff;
@@ -50,13 +49,24 @@
 
  }
 
- section {
+section {
     padding: 13px;
     margin: 20px;
-    width: 60%;
+    width: 100%;
     background: rgba(230, 254, 255, 0.7);
     border-radius: 30px;   
  }
 
+footer {
+   padding: 13px;
+   margin: 20px;
+   /* width: 100%; */
+   background: rgba(230, 254, 255, 0.7);
+   border-radius: 30px;   
+}
 
+.card{
+   border: 1px solid black
+   
+}
 
