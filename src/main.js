@@ -11,8 +11,11 @@ const div = document.getElementById("contenedorpeliculas");
 const drawCard = (pelicula) => {
   return`<div class="card">
     <ol>
+         <img alt="poster ${pelicula.title}" src=${pelicula.poster}
+         width=90%>
     <li>Nombre: ${pelicula.title}</li>
     <li>Año: ${pelicula.release_date}</li>
+
     </ol>
   </div>`;
 };
