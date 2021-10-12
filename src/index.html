@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body> 
+
+    
       <div id="root">
   
       <div id="container">
@@ -23,9 +25,17 @@
               <fieldset>
                 <legend>Filtros</legend>
                 <select name="filtro_provisional" id="filtro_pro">
-                  <option value="nombre_de_peliculas">Nombre de Peliculas</option>
-                  <option value="fecha_de_publicacion">Fecha de Publicación</option>
+                  <option id="name" value="nombre_de_peliculas">Nombre de Peliculas</option>
+                  <option id="date" value="fecha_de_publicacion">Fecha de Publicación</option>
                 </select>
+
+              <!--   <ul id="sortby" class="nav">
+                  <li>SORT BY
+                    <ul>
+                      <li id="byYear" class="byYear"> Oldest (year)</li>
+                    </ul>
+                  </li>
+                </ul> -->   
 
               </fieldset>
             </form>
@@ -41,6 +51,11 @@
           </section>
         
         </main>
+
+        <main>
+      
+
+
 
         <footer>
           <p> Realizado por Maca e Isa >:D </p>
