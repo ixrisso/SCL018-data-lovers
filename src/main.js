@@ -1,40 +1,62 @@
-//TODOS LOS NOMBRES DE COSAS VAN EN INGLES ojo ojo
-import { /* filterByDirector, ordenAlfabetico, yearMovie */ } from './data.js'; //importar datos del js
-
+/* TODOS LOS NOMBRES DE COSAS VAN EN INGLES ojo ojo
+Se importan las funciones desde data.js y la informacion desde ghibli.js */
+import { /* filterByDirector, ordenAlfabetico, yearMovie */ } from './data.js'; 
 import data from './data/ghibli/ghibli.js';
 
+/* Se crea variable para llamar a la data, y variable para el contenedor */
 const films = data.films;   
-const div = document.getElementById("contenedorpeliculas");
+const container = document.getElementById("contenedorpeliculas");
 
-const drawCard = (pelicula) => {
+/* Se establece la estructura(tarjeta) correspondiente a cada pelicula con la data */
+const drawCard = (film) => {
   return`<div class="card">
     <ul>
-         <img class="poster" alt="poster ${pelicula.title}" src=${pelicula.poster}>
-      
-    <li>Nombre: ${pelicula.title}</li>
-    <li>Año: ${pelicula.release_date}</li>
-
+      <img class="poster" alt="poster ${film.title}" src=${film.poster}>
+      <h5>${film.title}</h5>
+      <h6> ${film.release_date}</h6>
     </ul>
   </div>`;
 };
 
-
-for (let i=0; i < 19; i++) {
-  div.innerHTML += drawCard(films[i]);
+/* Se dibuja cada tarjeta/estructura recorriendo toda la data de los films */
+for (let i=0; i < films.length; i++) {
+  container.innerHTML += drawCard(films[i]);
 } 
 
+/* Comparar dos strings, pedir office hour, porque no entiendo el return  */
+function compareStrings(a, b) {
+  a = a.toLowerCase();
+  b = b.toLowerCase();
 
+  return (a < b) ? -1 : (a > b) ? 1 : 0;
+}
+
+/* Ordenar peliculas por año, es una funcion flecha, donde */
 const yearMovie = (arraytosort) => {
   return arraytosort.sort(function(a, b) {
-    return compareStrings(a.release_date, b.release_date);
+    return compareStrings(b.release_date, a.release_date);
 })
 };
 
+let yearMovieClick = document.getElementById("yearFilm");
+yearMovieClick.addEventListener ("click", function(){
+  document.getElementsByClassName("contenedorpeliculas") [0].innerHTML = "";
+  yearMovie(films);
+  drawCard(films);
+});
+
+console.log(yearMovie(films)); 
+
+/* Pedir office hour para lograr que ese console log se materialice */
+
+
+/* 
 const ordenAlfabetico = (arraytoSort) => {
   return arraytoSort.sort(function(a, b){
     return compareStrings (a.title, b.title)
   })
 }
+
 
 //Filtrar cosas? por director quiza
 const filterByDirector = (arraytoFilter, filterValue) => {
@@ -48,3 +70,4 @@ nombreOrden.addEventListener ("click", () => {
   document.getElementsByClassName("contenedorpeliculas") [0].innerHTML = "";   ordenAlfabetico(films);
 });
 
+ */
