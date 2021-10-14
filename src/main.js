@@ -38,14 +38,20 @@ const yearMovie = (arraytosort) => {
 })
 };
 
-let yearMovieClick = document.getElementById("yearFilm");
-yearMovieClick.addEventListener ("click", function(){
-  document.getElementsByClassName("contenedorpeliculas") [0].innerHTML = "";
-  yearMovie(films);
-  drawCard(films);
+let yearMovieClick = document.getElementById("filtro_pro");
+yearMovieClick.addEventListener ("change", function(){
+  console.log("Esto si se escucha");
+  document.getElementById("contenedorpeliculas").innerHTML = "";
+  let dataYear = yearMovie(films);
+  drawCard(dataYear);
+  console.log(drawCard(yearMovie(films)));
+  console.log("")
 });
 
-console.log(yearMovie(films)); 
+
+
+
+
 
 /* Pedir office hour para lograr que ese console log se materialice */
 
