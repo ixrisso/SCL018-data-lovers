@@ -9,6 +9,7 @@ const container = document.getElementById("contenedorpeliculas");
 
 /* Se establece la estructura(tarjeta) correspondiente a cada pelicula con la data */
 const drawCard = (film) => {
+  
   return`<div class="card">
     <ul>
       <img class="poster" alt="poster ${film.title}" src=${film.poster}>
@@ -16,6 +17,7 @@ const drawCard = (film) => {
       <h6> ${film.release_date}</h6>
     </ul>
   </div>`;
+  
 };
 
 /* Se dibuja cada tarjeta/estructura recorriendo toda la data de los films */
@@ -40,32 +42,32 @@ const yearMovieAsc = (arraytosort) => {
 
 let yearMovieClickAsc = document.getElementById("sortby_pro");
 yearMovieClickAsc.addEventListener ("change", function(){
-  console.log("Esto si se escucha");
-  document.getElementById("contenedorpeliculas").innerHTML = "";
+    document.getElementById("contenedorpeliculas").innerHTML = "";
   let dataYear = yearMovieAsc(films);
-  drawCard(dataYear);
-  console.log(dataYear);
+  for (let i=0; i < films.length; i++) {
+    container.innerHTML += drawCard(films[i]);
+  } console.log(dataYear);
 });
 
 /* Esta es la version al reves de la funcion de ordenar por fecha de publicacion */
-const yearMovieDesc = (arraytosort) => {
+/* const yearMovieDesc = (arraytosort) => {
   return arraytosort.sort(function(a, b) {
     return compareStrings(a.release_date, b.release_date);
 })
-};
+}; */
 
-let yearMovieClickDesc = document.getElementById("sortby_pro");
+/* let yearMovieClickDesc = document.getElementById("sortby_pro");
 yearMovieClickDesc.addEventListener ("change", function(){
   console.log("Esto si se escucha");
   document.getElementById("contenedorpeliculas").innerHTML = "";
   let dataYear2 = yearMovieDesc(films);
   drawCard(dataYear2);
   console.log(dataYear2);
-});
+}); */
 
 /* Orden alfabetico */
 
-const ordenAlfabeticoAZ = (arraytoSort) => {
+/* const ordenAlfabeticoAZ = (arraytoSort) => {
   return arraytoSort.sort(function(a, b){
     return compareStrings (a.title, b.title)
   })
@@ -77,23 +79,21 @@ ordenAlfabeticoClickAZ.addEventListener ("change", function(){
   let dataAZ = ordenAlfabeticoAZ(films);
   drawCard(dataAZ);
   console.log(dataAZ);
-});
+}); */
 
 /* Orden alfabetico al reves*/
-const ordenAlfabeticoZA = (arraytoSort) => {
+/* const ordenAlfabeticoZA = (arraytoSort) => {
   return arraytoSort.sort(function(a, b){
     return compareStrings (b.title, a.title)
   })
 };
 let ordenAlfabeticoZAClick = document.getElementById("sortby_pro");
 ordenAlfabeticoZAClick.addEventListener ("change", function(){
-  console.log("Esto si se escucha");
   document.getElementById("contenedorpeliculas").innerHTML = "";
   let dataZA = ordenAlfabeticoZA(films);
   drawCard(dataZA);
-  console.log(dataZA);
-});
-
+  });
+ */
 /* Filtrar por director quiza */
 
 /* const filterByDirector = (arraytoFilter, filterValue) => {
