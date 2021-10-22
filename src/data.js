@@ -1,6 +1,8 @@
 // estas funciones son de ejemplo
 import data from './data/ghibli/ghibli.js';
 
+const films = data.films;  
+
 /* Comparar dos strings , ambos en minuscula para igualdad de condiciones*/
 function compareStrings(a, b) {
   a = a.toLowerCase();
@@ -9,9 +11,11 @@ function compareStrings(a, b) {
 }
 
 /* Ordenar peliculas por año, desde mas nuevas*/
-export const yearMovieAsc = (arraytosort) => {
-  return arraytosort.sort(function(a, b) {
-    return compareStrings(b.release_date, a.release_date);
+export const filmsSort = () => {
+  const yearMovieAsc = films.sort (function(a, b){
+    return compareStrings(a.release_date, b.release_date);
+  }
+    
 })
 };
 
