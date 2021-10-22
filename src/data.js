@@ -1,30 +1,52 @@
 // estas funciones son de ejemplo
-//hay que agregar un import data
-export const example = () => {
-  return 'example';
+import data from './data/ghibli/ghibli.js';
+
+/* Comparar dos strings , ambos en minuscula para igualdad de condiciones*/
+function compareStrings(a, b) {
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+  return (a < b) ? -1 : (a > b) ? 1 : 0; //los signos interrogacion son un if o un else
+}
+
+/* Ordenar peliculas por año, desde mas nuevas*/
+export const yearMovieAsc = (arraytosort) => {
+  return arraytosort.sort(function(a, b) {
+    return compareStrings(b.release_date, a.release_date);
+})
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
-
-//Ordenar año de publicación, alfabeticamente y por rating score)
-
-/* export const yearMovie = (arraytosort) => {
+/* Esta es la version al reves, desde mas viejas */
+export const yearMovieDesc = (arraytosort) => {
   return arraytosort.sort(function(a, b) {
     return compareStrings(a.release_date, b.release_date);
 })
 };
 
-export const ordenAlfabetico = (arraytoSort) => {
+/* Orden alfabetico */
+export const ordenAlfabeticoAZ = (arraytoSort) => {
   return arraytoSort.sort(function(a, b){
     return compareStrings (a.title, b.title)
   })
-}
+  
+};
 
-//Filtrar cosas? por director quiza
+/* Orden alfabetico al reves */
+export const ordenAlfabeticoZA = (arraytoSort) => {
+  return arraytoSort.sort(function(a, b){
+    return compareStrings (b.title, a.title)
+  })
+};
+
+/* Puntuación rotten tomatoes */
+export const rottenTomatoes = (arraytoSort) => {
+  return arraytoSort.sort(function(a, b){
+    return compareStrings (b.title, a.title)
+  })
+};
+
+/*filtros*/
+
 export const filterByDirector = (arraytoFilter, filterValue) => {
   return arraytoFilter.filter((film) => film.director === filterValue);
-  }; */
+  };
 
-//funcion
