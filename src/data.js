@@ -46,7 +46,7 @@ export const rottenTomatoes = (arraytoSort) => {
 
 /*filtros*/
 
-export const filterByDirector = (arraytoFilter, filterValue) => {
+/* export const filterByDirector = (arraytoFilter, filterValue) => {
   return arraytoFilter.filter((film) => film.director === filterValue);
-  };
+  }; */
 
