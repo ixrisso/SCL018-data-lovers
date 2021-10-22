@@ -1,17 +1,3 @@
-
-@font-face {
-    font-family: 'Ghibli Regular';
-    font-style: normal;
-    font-weight: normal;
-    src:local('Ghibli Regular'), url('Eyad Al-Samman - Ghibli.woff') format('Woff');
-}
-
-@font-face {
-    font-family: 'Ghibli Bold';
-    font-style: normal;
-    font-weight: normal;
-    src:local('Ghibli Bold'), url('Eyad Al-Samman - Ghibli-Bold.woff') format('Woff');
-}
 *{
     font-family: 'Roboto Condensed', 'Helvetica Neue', sans-serif;
  }
@@ -24,7 +10,6 @@
  }
 
  h1{
-    font-family: 'Ghibli Bold';
     font-style: normal;
     font-weight: normal;
     font-size: 72px;
