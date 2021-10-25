@@ -2,30 +2,58 @@
 <html>
   <head>  
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>Ghiblipedia</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-   
-      <div id="container">
-        <header>
-          <h1> GhibliPediag</h1>
-        </header>
-        <main>
-          <aside>
-            <h3> Instrucciones </h3>
-            <p> Estas son las instrucciones </p>
-
-            <h4> Filtros </h4>
-            <p> Aqui van los filtros </p>
+  <body> 
+   <div id="root">
+  
+    <div id="container">
+      <header>
+        <h1> GhibliPedia</h1>
+      </header>
+      <main>
+       <aside>
+         <h4>Navegador GhibliPedia</h4>
+          <form>
+              <fieldset>
+                <legend>Filtros</legend>
+                <select name="sort" id="sortby_">
+                  <option value="sorted" selected hidden>Ordenar Según</option>
+                  <option id="name_az" value="name_az">Nombre de Peliculas (A-Z)</option>
+                  <option id="name_za" value="name_za">Nombre de Peliculas (Z-A)</option>
+                  <option id="yearFilmasc" value="date_asc">Más Nuevas </option>
+                  <option id="yearFilmdesc" value="date_desc">Más Antiguas</option>
+                  <option id="nota" value="ranking">Ranking</option>
+                </select>
+                <select name="filter" id="filterby_director">
+                    <option value="filtered" selected hidden>Filtrar Por</option>
+                    <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+                    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+                    <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+                    <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+                    <option value="Isao Takahata">Isao Takahata</option>
+                    <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+                  </select>
+              </fieldset>
+            </form>
+            
           </aside> 
           <section>
             <h2> Listado Peliculas </h2>
+            <!-- Creamos un contenedor vacío, que se llenará con la data usando javascript -->
+      <div id="contenedorpeliculas" > 
+      
+      </div>
+
           </section>
         
         </main>
+
+        <main>
+      
+
+
 
         <footer>
           <p> Realizado por Maca e Isa >:D </p>
@@ -36,7 +64,8 @@
 
       </div>
 
-
+      </div>
+      <script src="main.js" type="module"></script>
 
   </body>
 </html>
