@@ -1,49 +1,72 @@
-/* TODOS LOS NOMBRES DE COSAS VAN EN INGLES ojo ojo
-Se importan las funciones desde data.js y la informacion desde ghibli.js */
-import data from "./data/ghibli/ghibli.js";
-import {
-  yearMovieAsc,
-  yearMovieDesc,
-  ordenAlfabeticoAZ,
-  ordenAlfabeticoZA,
-} from "./data.js";
-
+//* TODOS LOS NOMBRES DE COSAS VAN EN INGLES ojo ojo
+//Se importan las funciones desde data.js y la informacion desde ghibli.js */
+import data from './data/ghibli/ghibli.js';
+import {sortData,filterData} from './data.js';
+//console.log (sortData,data);
 /* Se crea variable para llamar a la data, y variable para el contenedor */
-const films = data.films;
+let films = data.films;
+let film01 = films;
+
 const container = document.getElementById("contenedorpeliculas");
+let sortBy = "release_date";
+// //let result = [];
 
 /* Se establece la estructura(tarjeta) correspondiente a cada pelicula con la data */
-const drawCard = (film) => {
-  return `<div class="card">
-    <ul>
-      <img class="poster" alt="poster ${film.title}" src=${film.poster}>
-      <h5>${film.title}</h5>
-      <h6> ${film.release_date}</h6>
-    </ul>
-  </div>`;
+const drawCard = (films) => {
+  return `
+      <div class="card">
+      <img class="poster" alt="poster ${films.title}" src=${films.poster}>
+      <h5>${films.title}</h5>
+      <h6> ${films.release_date}</h6>
+      </div>`;
 };
-
-/* Se dibuja cada tarjeta/estructura recorriendo toda la data de los films */
-for (let i = 0; i < films.length; i++) {
-  container.innerHTML += drawCard(films[i]);
+/* Se recorre toda la data de los films */
+const printCard = (new01) => {
+  container.innerHTML = "";
+  new01.forEach((film01) => {
+    container.innerHTML += drawCard(film01);
+  })
 }
+printCard(films);
 
-const sortByBy = (myArray) => myArray.sort();
 
-//intento isa
-//como vaciar y en que momento
-const sortBy = document.getElementById("sortby_pro");
-let tempArray = [];
-sortBy.addEventListener("change", (event) => {
-  if (event.target.value === "fecha_de_publicaciondesc") {
-    for (let i = 0; i < films.length; i++) {
-      document.getElementById("contenedorpeliculas").innerHTML = "";
-      tempArray.push(films[i].release_date);
-    } 
-    //return container.innerHTML += drawCard(tempArray);
-    console.log(tempArray);
-    tempArray =  [];
-  }else if (event.target.value === "fecha_de_publicacionasc") {
+/* for (let i = 0; i < films.length; i++) {
+container.innerHTML += drawCard(films[i]);} */
+// const sortByBy = (myArray) => myArray.sort();
+
+const optionToSort = document.getElementById("sortby_");
+// optionToSort.addEventListener("change", (event) => {
+//   //if (bla.value ==="nombre de value elegido")
+//   //sort data (data, films.release_date, event.target.value)
+//   //print...
+//   //if bla.value==="nombre de value "//reverse de este costado
+//   const sortOption = sortData (data, sortBy, event.target.value);
+//   film01 = sortOption;
+//   printCard(film01);
+//   console.log(printCard(film01));
+// });
+
+
+const optionToFilter = document.querySelector("#filterby_director");
+optionToFilter.addEventListener("change", (event) => {
+  
+  const filterOption = filterData(films, event.target.value);
+  film01 = filterOption;
+  printCard(filterOption);
+});
+
+/* 
+resultado = names.filter (function(asdfklj) {
+return words.includes (asfjkas)
+});
+
+data.films.forEach (function(e){
+movietitle.push.(data.title);
+})
+
+document.getElementById(cajita).innerhtml = resultado;
+ */
+/*  }else if (event.target.value === "fecha_de_publicacionasc") {
     for (let i = 0; i < films.length; i++) {
       document.getElementById("contenedorpeliculas").innerHTML = "";
       tempArray.push(films[i].release_date);
@@ -52,9 +75,9 @@ sortBy.addEventListener("change", (event) => {
     tempArray.reverse();
     console.log(tempArray);
     tempArray =  [];
-  }
+  } */
   //container.innerHTML += drawCard(sortByBy(tempArray));
-});
+/* }) */;
 
 //va dentro de nuestro if
 /* else if (event.target.value ==="nombre_de_peliculas_a_z") {
@@ -78,33 +101,5 @@ sortBy.addEventListener("change", (event) => {
 /* const filterByDirector = (arraytoFilter, filterValue) => {
   return arraytoFilter.filter((film) => film.director === filterValue);
   };  */
-//botones de filtro y ordenados
-
-/* let nombreOrden = document.getElementById("name");
-nombreOrden.addEventListener ("click", () => {
-  document.getElementsByClassName("contenedorpeliculas") [0].innerHTML = "";   ordenAlfabetico(films);
-}) */
 
 /* aqui estuvo yess ijijijiji // */
-
-/*  
-  container.innerHTML = " ";
-    //const nombreProvisorio = films.filter(x => (x.title.toLowerCase()));
-    for (let i=0; i < nombreProvisorio.length; i++) {
-      return yearMovieDesc(nombreProvisorio);
-      };
-      container.innerHTML += drawCard(nombreProvisorio[i]);
-      console.log(nombreProvisorio[i].title); */
-
-/* 
-let yearMovieClickDesc = document.getElementById("sortby_pro");
-yearMovieClickDesc.addEventListener ("change", function(){
-  console.log("Esto si se escucha");
-  document.getElementById("contenedorpeliculas").innerHTML = "";
-  let dataYear2 = yearMovieDesc(films);
-  for (let i=0; i < films.length; i++) {
-    container.innerHTML += drawCard(films[i]);
-  } 
-  drawCard(dataYear2);
-  console.log(dataYear2);
-}); */

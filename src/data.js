@@ -1,52 +1,25 @@
 // estas funciones son de ejemplo
 import data from './data/ghibli/ghibli.js';
 
-/* Comparar dos strings , ambos en minuscula para igualdad de condiciones*/
-function compareStrings(a, b) {
-  a = a.toLowerCase();
-  b = b.toLowerCase();
-  return (a < b) ? -1 : (a > b) ? 1 : 0; //los signos interrogacion son un if o un else
+//ordenar
+export const sortData = (data, sortBy, sortOrder,) => {
+  //aqui? hacer un to lower case o quiza en otra parte
+  const sorted = films.sort(function(a, b){
+    if (a[sortBy] > b[sortBy]) { 
+      return 1; 
+    }
+    if (a[sortBy] < b[sortBy]) {
+      return -1;
+    } 
+      return  0;
+  });
+/*   if (sortOrder === "mas_nuevas") {
+      return sorted.reverse();
+  } */
+  return sorted;
+  }
+
+export const filterData = (films, filterBy) => {
+  return films.filter(x => x.director === filterBy);
 }
-
-/* Ordenar peliculas por año, desde mas nuevas*/
-export const yearMovieAsc = (arraytosort) => {
-  return arraytosort.sort(function(a, b) {
-    return compareStrings(b.release_date, a.release_date);
-})
-};
-
-/* Esta es la version al reves, desde mas viejas */
-export const yearMovieDesc = (arraytosort) => {
-  return arraytosort.sort(function(a, b) {
-    return compareStrings(a.release_date, b.release_date);
-})
-};
-
-/* Orden alfabetico */
-export const ordenAlfabeticoAZ = (arraytoSort) => {
-  return arraytoSort.sort(function(a, b){
-    return compareStrings (a.title, b.title)
-  })
-  
-};
-
-/* Orden alfabetico al reves */
-export const ordenAlfabeticoZA = (arraytoSort) => {
-  return arraytoSort.sort(function(a, b){
-    return compareStrings (b.title, a.title)
-  })
-};
-
-/* Puntuación rotten tomatoes */
-export const rottenTomatoes = (arraytoSort) => {
-  return arraytoSort.sort(function(a, b){
-    return compareStrings (b.title, a.title)
-  })
-};
-
-/*filtros*/
-
-/* export const filterByDirector = (arraytoFilter, filterValue) => {
-  return arraytoFilter.filter((film) => film.director === filterValue);
-  }; */
 
