@@ -2,7 +2,7 @@
 import data from './data/ghibli/ghibli.js';
 
 //ordenar
-export const sortData = (data, sortBy, sortOrder,) => {
+export const sortData = (data, sortBy, sortOrder) => {
   //aqui? hacer un to lower case o quiza en otra parte
   const sorted = films.sort(function(a, b){
     if (a[sortBy] > b[sortBy]) { 
@@ -13,9 +13,9 @@ export const sortData = (data, sortBy, sortOrder,) => {
     } 
       return  0;
   });
-/*   if (sortOrder === "mas_nuevas") {
+   if (sortOrder === "mas_nuevas") {
       return sorted.reverse();
-  } */
+  }
   return sorted;
   }
 
