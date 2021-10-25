@@ -1,13 +1,12 @@
 //Se importan las funciones desde data.js y la informacion desde ghibli.js */
 import data from './data/ghibli/ghibli.js';
-import {sortData,filterData} from './data.js';
+import {sortData, filterData} from './data.js';
 
 // Se crea variable para llamar a la data, y variable para el contenedor */
 let films = data.films;
 let film01 = films;
 const container = document.getElementById("contenedorpeliculas");
 
-let sortBy = "release_date";
 // //let result = [];
 
 /* Se establece la estructura(tarjeta) correspondiente a cada pelicula con la data */
@@ -32,10 +31,11 @@ printCard(films);
 const optionToSort = document.querySelector("#sortby_");
 optionToSort.addEventListener("change", (event) => {
   //buscar en oh agregar IF si se puede para que haga distinto segun event target value and reverse
-  const sortOption = sortData (data, sortBy, event.target.value);
+  const sortOption = sortData (data.films, event.target.value); 
   film01 = sortOption;
   printCard(film01);
 });
+
 
 //para filtrar, primero se llama al html, se escucha algun cambio y se trabaja
 const optionToFilter = document.querySelector("#filterby_director");
