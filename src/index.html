@@ -16,56 +16,39 @@
        <aside>
          <h4>Navegador GhibliPedia</h4>
           <form>
-              <fieldset>
-                <legend>Filtros</legend>
-                <select name="sort" id="sortby_">
-                  <option value="sorted" selected hidden>Ordenar Según</option>
-                  <option id="name_az" value="name_az">Nombre de Peliculas (A-Z)</option>
-                  <option id="name_za" value="name_za">Nombre de Peliculas (Z-A)</option>
-                  <option id="yearFilmasc" value="date_asc">Más Nuevas </option>
-                  <option id="yearFilmdesc" value="date_desc">Más Antiguas</option>
-                  <option id="nota" value="ranking">Ranking</option>
-                </select>
-                <select name="filter" id="filterby_director">
-                    <option value="filtered" selected hidden>Filtrar Por</option>
-                    <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-                    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-                    <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-                    <option value="Hiroyuki Morita">Hiroyuki Morita</option>
-                    <option value="Isao Takahata">Isao Takahata</option>
-                    <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
-                  </select>
-              </fieldset>
-            </form>
-            
-          </aside> 
-          <section>
-            <h2> Listado Peliculas </h2>
-            <!-- Creamos un contenedor vacío, que se llenará con la data usando javascript -->
-      <div id="contenedorpeliculas" > 
-      
-      </div>
+            <legend>Filtros</legend>
+              <select name="sort" id="sortby_">
+                <option class="option" value="sorted" selected hidden>Ordenar Según</option>
+                <option class="option" value="name_az">Nombre de Peliculas (A-Z)</option>
+                <option class="option" value="name_za">Nombre de Peliculas (Z-A)</option>
+                <option class="option" value="date_asc">Más Nuevas </option>
+                <option class="option" value="date_desc">Más Antiguas</option>
+                <option class="option" value="ranking">Ranking</option>
+              </select>
+              <select name="filter" id="filterby_director">
+                <option class="option" value="filtered" selected hidden>Filtrar Por</option>
+                <option class="option" value="Gorō Miyazaki">Gorō Miyazaki</option>
+                <option class="option" value="Hayao Miyazaki">Hayao Miyazaki</option>
+                <option class="option" value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+                <option class="option" value="Hiroyuki Morita">Hiroyuki Morita</option>
+                <option class="option" value="Isao Takahata">Isao Takahata</option>
+                <option class="option" value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+              </select>  
+          </form>
+        </aside> 
+        <section>
+          <h2> Listado Peliculas </h2>
+          <!-- Creamos un contenedor vacío, que se llenará con la data usando javascript -->
+          <div id="contenedorpeliculas" > 
+          </div>
+        </section>    
+      </main>
 
-          </section>
-        
-        </main>
-
-        <main>
-      
-
-
-
-        <footer>
-          <p> Realizado por Maca e Isa >:D </p>
-        </footer> 
-
-
-
-
-      </div>
-
-      </div>
-      <script src="main.js" type="module"></script>
-
+      <footer>
+        <p> Realizado por Maca e Isa :D </p>
+      </footer> 
+    </div>
+    </div>
+  <script src="main.js" type="module"></script>
   </body>
 </html>

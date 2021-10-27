@@ -1,23 +1,64 @@
-import { example, anotherExample } from '../src/data.js';
+import { sortData, filterData } from '../src/data.js';
 
+const test = [
+  { id: "1",
+  title: "Castle in the Sky",
+  director: "Hayao Miyazaki",
+  release_date: "1986",
+  rt_score: "95",
+  },
 
-describe('example', () => {
+  {id: "2",
+  title: "Grave of the Fireflies",
+  director: "Isao Takahata",
+  release_date: "1988",
+  rt_score: "97",
+  },
+
+  { id: "3",
+  title: "Whisper of the Heart",
+  director: "Yoshifumi Kondō",
+  release_date: "1995",
+  rt_score: "91",
+  }
+];
+
+describe('sortData', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof sortData).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+  it('returns test with', () => {
+    expect(sortData(test, "date_asc")).toStrictEqual([
+  {id: "3",
+  title: "Whisper of the Heart",
+  director: "Yoshifumi Kondō",
+  release_date: "1995",
+  rt_score: "91",
+  },
+  {id: "2",
+  title: "Grave of the Fireflies",
+  director: "Isao Takahata",
+  release_date: "1988",
+  rt_score: "97",
+  },
+  { id: "1",
+  title: "Castle in the Sky",
+  director: "Hayao Miyazaki",
+  release_date: "1986",
+  rt_score: "95",
+  }
+  ]);  });
 });
 
 
-describe('anotherExample', () => {
+describe('filterData', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof filterData).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('returns test with ', () => {
+    expect(filterData(test, "Hayao Miyazaki")).toStrictEqual([{ id: "1", title: "Castle in the Sky",
+    director: "Hayao Miyazaki", release_date: "1986", rt_score: "95" }]);
   });
 });
