@@ -7,22 +7,20 @@ let films = data.films;
 let film01 = films;
 const container = document.getElementById("contenedorpeliculas");
 
-// //let result = [];
-
 /* Se establece la estructura(tarjeta) correspondiente a cada pelicula con la data */
-const drawCard = (films) => {
+const drawCard = (datos) => {
   return `
       <div class="card">
-      <img class="poster" alt="poster ${films.title}" src=${films.poster}>
-      <h5>${films.title}</h5>
-      <h6> ${films.release_date}</h6>
+      <img class="poster" alt="poster ${datos.title}" src=${datos.poster}>
+      <h5>${datos.title}</h5>
+      <h6> ${datos.release_date}</h6>
       </div>`;
 };
 //Se vacia el contenedor, se recorre y luego se imprime con estructura anterior
 const printCard = (filmsdata) => {
   container.innerHTML = "";
-  filmsdata.forEach((film01) => {
-    container.innerHTML += drawCard(film01);
+  filmsdata.forEach((films) => {
+    container.innerHTML += drawCard(films);
   })
 };
 printCard(films);

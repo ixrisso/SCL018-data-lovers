@@ -2,6 +2,7 @@
 
 //ordenar
 export const sortData = (data, sortBy ) => {
+ 
   //recibe datos de peliculas y "value" de html del click
   
    //objeto "variable" que consolida los value con una data especifica

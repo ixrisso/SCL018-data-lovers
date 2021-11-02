@@ -83,7 +83,8 @@ footer {
   flex-wrap: wrap;
 }
 
-#sortby_ {
+
+.optionto_filter {
    background-color: #33a195;
    color: white;
    padding: 12px;
@@ -93,17 +94,7 @@ footer {
    margin: 5px;
 }
 
-#filterby_director {
-   background-color: #33a195;
-   color: white;
-   padding: 12px;
-   font-size: 16px;
-   border: none;
-   cursor: pointer;
-   margin: 5px;
-}
-
-.option {
+option {
    display: none;
    position: absolute;
    background-color: #f9f9f9;
@@ -116,6 +107,5 @@ footer {
    display: block;
  }
   
- #sortby_:hover {background-color: #40bcbc}
- #filterby_director:hover {background-color: #40bcbc}
- .option:hover {background-color: #cee0de;}
+.optionto_filter:hover {background-color: #40bcbc}
+option:hover {background-color: #cee0de;}

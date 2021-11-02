@@ -6,35 +6,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body> 
-   <div id="root">
-  
-    <div id="container">
+     <div id="container">
       <header>
         <h1> GhibliPedia</h1>
       </header>
       <main>
        <aside>
          <h4>Navegador GhibliPedia</h4>
-          <form>
+          <nav>
             <legend>Filtros</legend>
-              <select name="sort" id="sortby_">
-                <option class="option" value="sorted" selected hidden>Ordenar Según</option>
-                <option class="option" value="name_az">Nombre de Peliculas (A-Z)</option>
-                <option class="option" value="name_za">Nombre de Peliculas (Z-A)</option>
-                <option class="option" value="date_asc">Más Nuevas </option>
-                <option class="option" value="date_desc">Más Antiguas</option>
-                <option class="option" value="ranking">Ranking</option>
+              <select name="sort" class="optionto_filter" id="sortby_">
+                <option value="sorted" selected hidden>Ordenar Según</option>
+                <option value="name_az">Nombre de Peliculas (A-Z)</option>
+                <option value="name_za">Nombre de Peliculas (Z-A)</option>
+                <option value="date_asc">Más Nuevas </option>
+                <option value="date_desc">Más Antiguas</option>
+                <option value="ranking">Ranking</option>
               </select>
-              <select name="filter" id="filterby_director">
-                <option class="option" value="filtered" selected hidden>Filtrar Por</option>
-                <option class="option" value="Gorō Miyazaki">Gorō Miyazaki</option>
-                <option class="option" value="Hayao Miyazaki">Hayao Miyazaki</option>
-                <option class="option" value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-                <option class="option" value="Hiroyuki Morita">Hiroyuki Morita</option>
-                <option class="option" value="Isao Takahata">Isao Takahata</option>
-                <option class="option" value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+              <select name="filter" class="optionto_filter" id="filterby_director">
+                <option value="filtered" selected hidden>Filtrar Por</option>
+                <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+                <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+                <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+                <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+                <option value="Isao Takahata">Isao Takahata</option>
+                <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
               </select>  
-          </form>
+            </nav>
         </aside> 
         <section>
           <h2> Listado Peliculas </h2>
@@ -45,10 +43,9 @@
       </main>
 
       <footer>
-        <p> Realizado por Maca e Isa :D </p>
+        <p>Desarrollado por Macarena Ponce e Isabella Risso</p>
       </footer> 
     </div>
-    </div>
-  <script src="main.js" type="module"></script>
+    <script src="main.js" type="module"></script>
   </body>
 </html>
